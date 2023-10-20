@@ -7,7 +7,7 @@ model = YOLO('yolov8n.yaml')
 model = YOLO('yolov8n.pt')
 
 # Train the model using the 'coco128.yaml' dataset for 3 epochs
-results = model.train(data='data/potato.yaml', epochs=100, patience=20, batch=2, imgsz=640, project="potato", name="potato-", classes=[0], augment=True, visualize=True)
+results = model.train(data='data/potato.yaml', epochs=100, patience=20, batch=4, imgsz=640, project="potato", name="potato-", classes=[0], augment=True, visualize=True, device=0)
 
 # Evaluate the model's performance on the validation set
 results = model.val()
