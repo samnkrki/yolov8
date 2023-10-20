@@ -1,0 +1,13 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+# path: /media/samin/MadRabbit/datasets/tomato_disease # dataset root dir
+path: /Users/saminator/Documents/datasets/tomato_disease
+# path: /Users/saminator/Documents/datasets/tomato_disease
+# train: train.txt  # train images (relative to 'path') 128 images
+# val: test.txt  # val images (relative to 'path') 128 images
+# test: imageSets/Main/test.txt # test images (optional)
+train: train.txt
+val: val.txt
+
+# Classes
+nc: 10  # number of classes
+names: ['plague','canker','gmold','miner','lmold','wfly','ltemp','powder','nutrex','back']  # class names  # class names

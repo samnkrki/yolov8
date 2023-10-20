@@ -1,0 +1,35 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+# path: /media/samin/MadRabbit/datasets/tomato_disease # dataset root dir
+path: /Users/saminator/Documents/datasets/my_leaf_dataset/capsicum
+train: train_split_capsicum.txt  # train images (relative to 'path') 128 images
+val: val_split_capsicum.txt  # val images (relative to 'path') 128 images
+# test: imageSets/Main/test.txt # test images (optional)
+# path: D:\\datasets\\my_leaf_dataset\\capsicum
+# train: train_1280
+# val: val_1280
+# Classes
+# Classes
+nc: 21  # number of classes
+names: [
+'LB',
+'BLS',
+'LS',
+'ND',
+'INS',
+'LCV',
+'EB',
+'A',
+'MV',
+'LB-A',
+'BS',
+'BLS-MV',
+'PM',
+'LCV-MV',
+'MV',
+'FW',
+'BLS-ND',
+'CLV',
+'SWV',
+'PM-LCV',
+'BLS-LCV',
+'CYV']  # class names  # class names
