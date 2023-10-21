@@ -11,7 +11,7 @@ if __name__ == '__main__':
     }
 
     # Load a pretrained YOLO model (recommended for training)
-    model = YOLO('yolov8s.pt')
+    model = YOLO('yolovn.pt')
 
     # Train the model using the 'coco128.yaml' dataset for 3 epochs
     results = model.train(data='data/potato.yaml', epochs=100, patience=20, batch=4, imgsz=640, project="potato", name="potato-", classes=[0], augment=True, visualize=True, device=0, optimizer="Adam", lr0=0.001)
