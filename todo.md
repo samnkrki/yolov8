@@ -8,3 +8,6 @@ less accuracy than tolov8n
 slightly increased accuracy from exp 1
 
 ## Exp 4: use raytune for hyperparameter optimization
+only works on mac, not on windows but mac is slow.
+
+## Exp 5: use new best hyperparameters given in yolov8 docs
