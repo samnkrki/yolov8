@@ -1,6 +1,6 @@
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
 # path: /media/samin/MadRabbit/datasets/tomato_disease # dataset root dir
-path: /Users/saminator/Documents/datasets/potato_many
+path: C:/Users/USER/Documents/datasets/potato_many
 train: train_2560
 val: val_2560
 # Classes

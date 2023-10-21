@@ -1,5 +1,7 @@
 from ultralytics import YOLO
 import os
+from ray import tune
+
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 if __name__ == '__main__':
