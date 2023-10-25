@@ -5,9 +5,10 @@ from ray import tune
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 if __name__ == '__main__':
-# dataset_path = '/Users/saminator/Documents/yolov8/data/potato.yaml'
+    # dataset_path = '/Users/saminator/Documents/yolov8/data/potato.yaml'
     dataset_path = 'C:/Users/USER/Documents/samin/yolov8/data/potato.yaml'
     train_args = dict(data=dataset_path, epochs=100, batch=4, imgsz=640, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="Adam")
+    train_args['classes'] = [0,2]
     augment_args = dict()
     # augment_args['lr0']= 0.001 # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
     # augment_args['lrf']= 0.1 # final learning rate (lr0 * lrf)
