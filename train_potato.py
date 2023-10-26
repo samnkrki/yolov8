@@ -42,7 +42,7 @@ if __name__ == '__main__':
     model = YOLO('yolov8n.pt')
 
     # Train the model using the 'coco128.yaml' dataset for 3 epochs
-    results = model.train(**train_args, **augment_args)
+    results = model.tune(**train_args, **augment_args, use_ray=True)
 
     # Evaluate the model's performance on the validation set
     results = model.val()
