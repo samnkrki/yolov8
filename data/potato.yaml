@@ -9,27 +9,10 @@ nc: 23  # number of classes
 names: [
 'LB',
 'CLB',
-'LCV',
-'PEB',
-'INS',
 'PBS',
-'PLM',
-'PBC',
 'PLS',
-'PBRS',
-'PVW',
-'PMV',
-'PM',
-'PSR',
-'ND',
-'LB-PVW',
-'LB-PSR',
-'PVW-PSR',
-'PEB-LB',
-'LB-INS',
-'LB-LCV',
-'LCV-PM',
-'PBLS'
+'LCV',
+'PM'
 ]  # class names  # class names
 
 # LB
