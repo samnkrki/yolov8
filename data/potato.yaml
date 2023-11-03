@@ -5,7 +5,7 @@ train: train_2560
 val: val_2560
 # Classes
 # Classes
-nc: 23  # number of classes
+nc: 6  # number of classes
 names: [
 'LB',
 'CLB',
