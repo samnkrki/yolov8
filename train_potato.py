@@ -11,7 +11,7 @@ if __name__ == '__main__':
     train_args = dict(data=dataset_path, epochs=500, batch=4, imgsz=640, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="Adam")
     train_args['classes'] = [0]
     augment_args = dict()
-    # augment_args['lr0']= 0.001 # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
+    augment_args['lr0']= 0.001 # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
     # augment_args['lrf']= 0.1 # final learning rate (lr0 * lrf)
     # augment_args['momentum']= 0.937 # SGD momentum/Adam beta1
     # augment_args['weight_decay']= 0.0005 # optimizer weight decay 5e-4
@@ -40,17 +40,17 @@ if __name__ == '__main__':
     # augment_args['copy_paste']= 0.1 # segment copy-paste (probability)
 
     # Load a pretrained YOLO model (recommended for training)
-    model = YOLO('yolov8s.pt')
+    model = YOLO('yolov8n.pt')
 
     # Train the model using the 'coco128.yaml' dataset for 3 epochs
-    # results = model.tune(**train_args, **augment_args, suse_ray=True)
+    # results = model.tune(**train_args, **augment_args, use_ray=True)
     results = model.train(**train_args, **augment_args)
     
     # Evaluate the model's performance on the validation set
     results = model.val()
 
     # Perform object detection on an image using the model
-    results = model('https://ultralytics.com/images/bus.jpg')
+    # results = model('https://ultralytics.com/images/bus.jpg')
 
     # Export the model to ONNX format
-    success = model.export(format='onnx')
+    # success = model.export(format='onnx')
