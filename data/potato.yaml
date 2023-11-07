@@ -5,29 +5,46 @@ train: train_2560
 val: val_2560
 # Classes
 # Classes
-nc: 6  # number of classes
+nc: 23  # number of classes
 names: [
 'LB',
 'CLB',
 'PBS',
 'PLS',
 'LCV',
-'PM'
+'PM',
+'PEB',
+'INS',
+'PLM',
+'PBC',
+'PBRS',
+'PVW',
+'PMV',
+'PSR',
+'ND',
+'LB-PVW',
+'LB-PSR',
+'PVW-PSR',
+'PEB-LB',
+'LB-INS',
+'LB-LCV',
+'LCV-PM',
+'PBLS'
 ]  # class names  # class names
 
 # LB
 # CLB
+# PBS
+# PLS
 # LCV
+# PM
 # PEB
 # INS
-# PBS
 # PLM
 # PBC
-# PLS
 # PBRS
 # PVW
 # PMV
-# PM
 # PSR
 # ND
 # LB-PVW
