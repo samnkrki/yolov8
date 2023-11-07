@@ -43,7 +43,7 @@ if __name__ == '__main__':
     model = YOLO('yolov8n.pt')
 
     # Train the model using the 'coco128.yaml' dataset for 3 epochs
-    results = model.tune(**train_args, **augment_args, use_ray=True)
+    results = model.tune(**train_args, **augment_args, use_ray=True, num_samples=10, resources_per_trial={"cpu": 1, "gpu": 0.5})
     # results = model.train(**train_args, **augment_args)
     
     # Evaluate the model's performance on the validation set
