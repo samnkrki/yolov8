@@ -8,7 +8,7 @@ if __name__ == '__main__':
     # dataset_path = '/Users/saminator/Documents/yolov8/data/potato.yaml'
     dataset_path = 'C:/Users/USER/Documents/samin/yolov8/data/potato.yaml'
     # dataset_path = '/home/wakanda/Documents/samin/yolov8/data/potato.yaml'
-    train_args = dict(data=dataset_path, epochs=100, batch=4, imgsz=640, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="Adam")
+    train_args = dict(data=dataset_path, epochs=500, batch=4, imgsz=640, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="Adam")
     train_args['classes'] = [0]
     augment_args = dict()
     # augment_args['lr0']= 0.001 # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     # augment_args['copy_paste']= 0.1 # segment copy-paste (probability)
 
     # Load a pretrained YOLO model (recommended for training)
-    model = YOLO('yolov8n.pt')
+    model = YOLO('yolov8s.pt')
 
     # Train the model using the 'coco128.yaml' dataset for 3 epochs
     # results = model.tune(**train_args, **augment_args, suse_ray=True)
