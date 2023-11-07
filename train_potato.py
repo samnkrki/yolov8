@@ -8,7 +8,7 @@ if __name__ == '__main__':
     # dataset_path = '/Users/saminator/Documents/yolov8/data/potato.yaml'
     dataset_path = 'c:/Users/USER/Documents/samin/yolov8/data/potato.yaml'
     # dataset_path = '/home/wakanda/Documents/samin/yolov8/data/potato.yaml'
-    train_args = dict(epochs=500, batch=4, imgsz=640, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="Adam")
+    train_args = dict(epochs=100, batch=4, imgsz=640, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="Adam")
     train_args['data'] = dataset_path
     train_args['classes'] = [0]
     augment_args = dict()
