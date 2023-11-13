@@ -37,7 +37,7 @@ if __name__ == '__main__':
     augment_args['perspective']= 0.0 # image perspective (+/- fraction), range 0-0.001
     augment_args['flipud']= 0.5 # image flip up-down (probability)
     augment_args['fliplr']= 0.5 # image flip left-right (probability)
-    augment_args['mosaic']= 1.0 # image mosaic (probability)
+    augment_args['mosaic']= 0.1 # image mosaic (probability)
     augment_args['mixup']= 0.0 # image mixup (probability)
     augment_args['copy_paste']= 0.1 # segment copy-paste (probability)
 
