@@ -11,6 +11,7 @@ if __name__ == '__main__':
     train_args = dict(epochs=100, batch=4, imgsz=1024, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="Adam")
     train_args['data'] = dataset_path
     train_args['classes'] = [0]
+    train_args['fraction'] = 1.0
     augment_args = dict()
     augment_args['lr0']= 0.001 # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
     augment_args['lrf']= 0.1 # final learning rate (lr0 * lrf)
