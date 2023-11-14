@@ -11,7 +11,7 @@ if __name__ == '__main__':
     train_args = dict(epochs=500, batch=4, imgsz=640, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="Adam")
     train_args['data'] = dataset_path
     train_args['classes'] = [0]
-    train_args['fraction'] = 0.5
+    train_args['fraction'] = 1.0
     train_args['patience'] = 30
     augment_args = dict()
     augment_args['lr0']= 0.001 # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     # augment_args['copy_paste']= 0.1 # segment copy-paste (probability)
 
     # Load a pretrained YOLO model (recommended for training)
-    model = YOLO('yolov8n.pt')
+    model = YOLO('yolov8s.pt')
 
     # Train the model using the 'coco128.yaml' dataset for 3 epochs
     # results = model.tune(**train_args, **augment_args, use_ray=True, gpu_per_trial=1)
