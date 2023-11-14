@@ -3,7 +3,7 @@ import os
 from ultralytics import YOLO
 import shutil
 # Define output folder
-output_folder = 'out'
+output_folder = 'inference'
 
 def save_inference(input_folder, model):
     # Loop over all image files in input directory
@@ -22,6 +22,6 @@ def save_inference(input_folder, model):
             # shutil.move(os.path.join('runs/detect', timestamp), os.path.join(output_folder, timestamp))
 
 if __name__ == '__main__':
-    dataset_path = 'C:/Users/USER/Documents/datasets/potato_many/train_2560/images'
-    model = YOLO('./potato/potato-27/weights/best.pt')
+    dataset_path = 'c:/Users/USER/Documents/datasets/potato_many/val_2560/images'
+    model = YOLO('./potato/potato-28/weights/best.pt')
     save_inference(dataset_path, model)
