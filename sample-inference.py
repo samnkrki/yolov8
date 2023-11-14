@@ -22,6 +22,9 @@ def save_inference(input_folder, model):
             # shutil.move(os.path.join('runs/detect', timestamp), os.path.join(output_folder, timestamp))
 
 if __name__ == '__main__':
-    dataset_path = 'c:/Users/USER/Documents/datasets/potato_many/val_2560/images'
-    model = YOLO('./potato/potato-28/weights/best.pt')
+    project = 'potato'
+    name="potato-28"
+    path = f'./{project}/{name}/weights/best.pt'
+    dataset_path = 'c:/Users/USER/Documents/datasets/potato_many/train_2560/images'
+    model = YOLO(path)
     save_inference(dataset_path, model)
