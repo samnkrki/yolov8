@@ -8,16 +8,16 @@ if __name__ == '__main__':
     # dataset_path = '/Users/saminator/Documents/yolov8/data/potato.yaml'
     dataset_path = 'c:/Users/USER/Documents/samin/yolov8/data/potato.yaml'
     # dataset_path = '/home/wakanda/Documents/samin/yolov8/data/potato.yaml'
-    train_args = dict(epochs=500, batch=4, imgsz=1280, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="Adam")
+    train_args = dict(epochs=500, batch=4, imgsz=1280, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="SGD")
     train_args['data'] = dataset_path
     train_args['classes'] = [0]
-    train_args['fraction'] = 0.5
+    train_args['fraction'] = 1.0
     train_args['patience'] = 30
     augment_args = dict()
-    augment_args['lr0']= 0.001 # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
-    # augment_args['lrf']= 0.1 # final learning rate (lr0 * lrf)
-    # augment_args['momentum']= 0.937 # SGD momentum/Adam beta1
-    # augment_args['weight_decay']= 0.0005 # optimizer weight decay 5e-4
+    augment_args['lr0']= 0.01 # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
+    augment_args['lrf']= 0.1 # final learning rate (lr0 * lrf)
+    augment_args['momentum']= 0.937 # SGD momentum/Adam beta1
+    augment_args['weight_decay']= 0.0005 # optimizer weight decay 5e-4
     # augment_args['warmup_epochs']= 3.0 # warmup epochs (fractions ok)
     # augment_args['warmup_momentum']= 0.8 # warmup initial momentum
     # augment_args['warmup_bias_lr']= 0.1 # warmup initial bias lr
