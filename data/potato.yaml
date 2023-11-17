@@ -1,8 +1,8 @@
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
 # path: /media/samin/MadRabbit/datasets/tomato_disease # dataset root dir
 path: C:/Users/USER/Documents/datasets/potato_many
-train: train_1920
-val: val_1920
+train: train_2720
+val: val_2720
 # Classes
 # Classes
 nc: 23  # number of classes
