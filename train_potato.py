@@ -8,7 +8,7 @@ if __name__ == '__main__':
     # dataset_path = '/Users/saminator/Documents/yolov8/data/potato.yaml'
     dataset_path = 'c:/Users/USER/Documents/samin/yolov8/data/potato.yaml'
     # dataset_path = '/home/wakanda/Documents/samin/yolov8/data/potato.yaml'
-    train_args = dict(epochs=500, batch=4, imgsz=1280, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="SGD")
+    train_args = dict(epochs=500, batch=4, imgsz=640, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="SGD")
     train_args['data'] = dataset_path
     train_args['classes'] = [0]
     train_args['fraction'] = 1.0
@@ -46,11 +46,53 @@ if __name__ == '__main__':
     model = YOLO('yolov8n.pt')
 
     # Train the model using the 'coco128.yaml' dataset for 3 epochs
-    # results = model.tune(**train_args, **augment_args, use_ray=True, gpu_per_trial=1)
-    results = model.train(**train_args, **augment_args)
+    results = model.tune(**train_args, **augment_args, use_ray=True, gpu_per_trial=1)
+    # results = model.train(**train_args, **augment_args)
     
     # Evaluate the model's performance on the validation set
-    results = model.val()
+    # results = model.val()
+
+    # Tuning continued
+    if results.errors:
+        print("One or more trials failed!")
+    else:
+        print("No errors!")
+
+    num_results = len(results)
+    print("Number of results:", num_results)
+
+    # Iterate over results
+    for i, result in enumerate(results):
+        if result.error:
+            print(f"Trial #{i} had an error:", result.error)
+            continue
+
+        print(
+            f"Trial #{i} finished successfully with a mean accuracy metric of:",
+            result.metrics["mean_accuracy"]
+        )
+    
+    results_df = results.get_dataframe()
+    results_df[["training_iteration", "mean_accuracy"]]
+
+    print("Shortest training time:", results_df["time_total_s"].min())
+    print("Longest training time:", results_df["time_total_s"].max())
+
+    best_result_df = results.get_dataframe(
+    filter_metric="mean_accuracy", filter_mode="max"
+    )
+    best_result_df[["training_iteration", "mean_accuracy"]]
+    from ray.train import Result
+
+    # Get the result with the maximum test set `mean_accuracy`
+    best_result: Result = results.get_best_result()
+
+    # Get the result with the minimum `mean_accuracy`
+    worst_performing_result: Result = results.get_best_result(
+        metric="mean_accuracy", mode="min"
+    )
+    print(best_result.config)
+
 
     # Perform object detection on an image using the model
     # results = model('https://ultralytics.com/images/bus.jpg')
