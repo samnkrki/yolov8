@@ -23,8 +23,8 @@ def save_inference(input_folder, model, project, name):
 
 if __name__ == '__main__':
     project = 'potato'
-    folder_name='val_2560'
-    name="potato-31"
+    folder_name='train_2720'
+    name="potato-49"
     path = f'./{project}/{name}/weights/best.pt'
     dataset_path = f'c:/Users/USER/Documents/datasets/potato_many/{folder_name}/images'
     model = YOLO(path)
