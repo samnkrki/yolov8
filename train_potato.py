@@ -1,6 +1,7 @@
 from ultralytics import YOLO
 import os
 from ray import tune
+from ray.tune.examples.mnist_pytorch import train_mnist
 
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
@@ -56,7 +57,7 @@ if __name__ == '__main__':
     experiment_path = os.path.join('C:/Users/USER/ray_results', '_tune_2023-11-18_08-00-07')
     print(f"Loading results from {experiment_path}...")
 
-    restored_tuner = tune.Tuner.restore(experiment_path)
+    restored_tuner = tune.Tuner.restore(experiment_path, trainable=train_mnist)
     results = restored_tuner.get_results()
 
     if results.errors:
