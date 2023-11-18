@@ -1,6 +1,6 @@
 from ultralytics import YOLO
 import os
-# from ray import tune
+from ray import tune
 
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
@@ -46,13 +46,19 @@ if __name__ == '__main__':
     model = YOLO('yolov8n.pt')
 
     # Train the model using the 'coco128.yaml' dataset for 3 epochs
-    results = model.tune(**train_args, **augment_args, use_ray=True, gpu_per_trial=1)
+    # results = model.tune(**train_args, **augment_args, use_ray=True, gpu_per_trial=1)
     # results = model.train(**train_args, **augment_args)
     
     # Evaluate the model's performance on the validation set
     # results = model.val()
 
     # Tuning continued
+    experiment_path = os.path.join('C:/Users/USER/ray_results', '_tune_2023-11-18_08-00-07')
+    print(f"Loading results from {experiment_path}...")
+
+    restored_tuner = tune.Tuner.restore(experiment_path)
+    results = restored_tuner.get_results()
+
     if results.errors:
         print("One or more trials failed!")
     else:
