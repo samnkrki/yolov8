@@ -29,7 +29,8 @@ names: [
 'LB-INS',
 'LB-LCV',
 'LCV-PM',
-'PBLS'
+'PBLS',
+'BG'
 ]  # class names  # class names
 
 # LB
