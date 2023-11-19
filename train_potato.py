@@ -11,7 +11,7 @@ if __name__ == '__main__':
     # dataset_path = '/home/wakanda/Documents/samin/yolov8/data/potato.yaml'
     train_args = dict(epochs=15, batch=4, imgsz=640, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="SGD")
     train_args['data'] = dataset_path
-    train_args['classes'] = [0]
+    train_args['classes'] = [0, 23]
     train_args['fraction'] = 1.0
     train_args['patience'] = 30
     augment_args = dict()
