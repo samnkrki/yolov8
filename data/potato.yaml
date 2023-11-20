@@ -1,39 +1,39 @@
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
 # path: /media/samin/MadRabbit/datasets/tomato_disease # dataset root dir
 path: C:/Users/USER/Documents/datasets/potato_many
-train: train_2720_small
-val: val_2720_small
+train: train_0_2720
+val: val_0_2720
 # Classes
-nc: 1
-names: ['LB']
+# nc: 1
+# names: ['LB']
 # Classes
-# nc: 24  # number of classes
-# names: [
-# 'LB',
-# 'CLB',
-# 'PBS',
-# 'PLS',
-# 'LCV',
-# 'PM',
-# 'PEB',
-# 'INS',
-# 'PLM',
-# 'PBC',
-# 'PBRS',
-# 'PVW',
-# 'PMV',
-# 'PSR',
-# 'ND',
-# 'LB-PVW',
-# 'LB-PSR',
-# 'PVW-PSR',
-# 'PEB-LB',
-# 'LB-INS',
-# 'LB-LCV',
-# 'LCV-PM',
-# 'PBLS',
-# 'BG'
-# ]  # class names  # class names
+nc: 24  # number of classes
+names: [
+'LB',
+'CLB',
+'PBS',
+'PLS',
+'LCV',
+'PM',
+'PEB',
+'INS',
+'PLM',
+'PBC',
+'PBRS',
+'PVW',
+'PMV',
+'PSR',
+'ND',
+'LB-PVW',
+'LB-PSR',
+'PVW-PSR',
+'PEB-LB',
+'LB-INS',
+'LB-LCV',
+'LCV-PM',
+'PBLS',
+'BG'
+]  # class names  # class names
 
 # LB
 # CLB
