@@ -69,16 +69,16 @@ if __name__ == '__main__':
     print("Number of results:", num_results)
 
     # Iterate over results
-    for i, result in enumerate(results):
-        if result.error:
-            print(f"Trial #{i} had an error:", result.error)
-            continue
+    # for i, result in enumerate(results):
+    #     if result.error:
+    #         print(f"Trial #{i} had an error:", result.error)
+    #         continue
 
-        print(
-            f"Trial #{i} finished successfully with a mean accuracy metric of:",
-            result.metrics
-        )
-    
+    #     print(
+    #         f"Trial #{i} finished successfully with a mean accuracy metric of:",
+    #         result.metrics
+    #     )
+    print(results)
     results_df = results.get_dataframe().to_csv('results.csv')
     # results_df[["training_iteration", "mean_accuracy"]]
 
