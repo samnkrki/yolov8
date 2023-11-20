@@ -32,7 +32,7 @@ if __name__ == '__main__':
     # augment_args['hsv_h']= 0.015 # image HSV-Hue augmentation (fraction)
     # augment_args['hsv_s']= 0.7 # image HSV-Saturation augmentation (fraction)
     # augment_args['hsv_v']= 0.4 # image HSV-Value augmentation (fraction)
-    # augment_args['degrees']= 0.1 # image rotation (+/- deg)
+    augment_args['degrees']= 0.1 # image rotation (+/- deg)
     # augment_args['translate']= 0.1 # image translation (+/- fraction)
     # augment_args['scale']= 0 # image scale (+/- gain)
     # augment_args['shear']= 0.0 # image shear (+/- deg)
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     # augment_args['fliplr']= 0.5 # image flip left-right (probability)
     # augment_args['mosaic']= 0.1 # image mosaic (probability)
     # augment_args['mixup']= 0.0 # image mixup (probability)
-    # augment_args['copy_paste']= 0.1 # segment copy-paste (probability)
+    augment_args['copy_paste']= 0.1 # segment copy-paste (probability)
 
     # Load a pretrained YOLO model (recommended for training)
     model = YOLO('yolov8n.pt')
