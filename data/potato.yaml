@@ -4,34 +4,36 @@ path: C:/Users/USER/Documents/datasets/potato_many
 train: train_2760_small
 val: val_2760_small
 # Classes
+nc: 1
+names: ['LB']
 # Classes
-nc: 24  # number of classes
-names: [
-'LB',
-'CLB',
-'PBS',
-'PLS',
-'LCV',
-'PM',
-'PEB',
-'INS',
-'PLM',
-'PBC',
-'PBRS',
-'PVW',
-'PMV',
-'PSR',
-'ND',
-'LB-PVW',
-'LB-PSR',
-'PVW-PSR',
-'PEB-LB',
-'LB-INS',
-'LB-LCV',
-'LCV-PM',
-'PBLS',
-'BG'
-]  # class names  # class names
+# nc: 24  # number of classes
+# names: [
+# 'LB',
+# 'CLB',
+# 'PBS',
+# 'PLS',
+# 'LCV',
+# 'PM',
+# 'PEB',
+# 'INS',
+# 'PLM',
+# 'PBC',
+# 'PBRS',
+# 'PVW',
+# 'PMV',
+# 'PSR',
+# 'ND',
+# 'LB-PVW',
+# 'LB-PSR',
+# 'PVW-PSR',
+# 'PEB-LB',
+# 'LB-INS',
+# 'LB-LCV',
+# 'LCV-PM',
+# 'PBLS',
+# 'BG'
+# ]  # class names  # class names
 
 # LB
 # CLB
