@@ -47,11 +47,11 @@ if __name__ == '__main__':
     model = YOLO('yolov8n.pt')
 
     # Train the model using the 'coco128.yaml' dataset for 3 epochs
-    # results = model.tune(**train_args, **augment_args, use_ray=True, gpu_per_trial=1)
-    results = model.train(**train_args, **augment_args)
+    results = model.tune(**train_args, **augment_args, use_ray=True, gpu_per_trial=1)
+    # results = model.train(**train_args, **augment_args)
     
     # Evaluate the model's performance on the validation set
-    results = model.val()
+    # results = model.val()
 
     # Tuning continued
     # experiment_path = os.path.join('C:/Users/USER/ray_results', '_tune_2023-11-18_08-00-07')
@@ -60,27 +60,26 @@ if __name__ == '__main__':
     # restored_tuner = tune.Tuner.restore(experiment_path, trainable=train_mnist)
     # results = restored_tuner.get_results()
 
-    # if results.errors:
-    #     print("One or more trials failed!")
-    # else:
-    #     print("No errors!")
+    if results.errors:
+        print("One or more trials failed!")
+    else:
+        print("No errors!")
 
-    # num_results = len(results)
-    # print("Number of results:", num_results)
+    num_results = len(results)
+    print("Number of results:", num_results)
 
-    # # Iterate over results
-    # for i, result in enumerate(results):
-    #     print("each result", result)
-    #     if result.error:
-    #         print(f"Trial #{i} had an error:", result.error)
-    #         continue
+    # Iterate over results
+    for i, result in enumerate(results):
+        if result.error:
+            print(f"Trial #{i} had an error:", result.error)
+            continue
 
-    #     print(
-    #         f"Trial #{i} finished successfully with a mean accuracy metric of:",
-    #         result.metrics["mean_accuracy"]
-    #     )
+        print(
+            f"Trial #{i} finished successfully with a mean accuracy metric of:",
+            result.metrics
+        )
     
-    # results_df = results.get_dataframe()
+    results_df = results.get_dataframe().to_csv('results.csv')
     # results_df[["training_iteration", "mean_accuracy"]]
 
     # print("Shortest training time:", results_df["time_total_s"].min())
