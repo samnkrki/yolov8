@@ -14,6 +14,7 @@ if __name__ == '__main__':
     train_args['classes'] = [0, 23]
     train_args['fraction'] = 1.0
     train_args['patience'] = 30
+    train_args['pretrained'] = True
     augment_args = dict()
     augment_args['lr0']= 0.001 # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
     augment_args['lrf']= 0.1 # final learning rate (lr0 * lrf)
