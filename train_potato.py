@@ -15,8 +15,11 @@ if __name__ == '__main__':
     train_args['fraction'] = 1.0
     train_args['patience'] = 30
     train_args['pretrained'] = True
+    train_args['freeze'] = 1
+    # train_args['iou'] = 0.5
+    train_args['cos_lr'] = True
     augment_args = dict()
-    augment_args['lr0']= 0.001 # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
+    augment_args['lr0']= 1E-3 # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
     augment_args['lrf']= 0.1 # final learning rate (lr0 * lrf)
     augment_args['momentum']= 0.937 # SGD momentum/Adam beta1
     augment_args['weight_decay']= 0.0005 # optimizer weight decay 5e-4
@@ -33,7 +36,7 @@ if __name__ == '__main__':
     # augment_args['hsv_h']= 0.015 # image HSV-Hue augmentation (fraction)
     # augment_args['hsv_s']= 0.7 # image HSV-Saturation augmentation (fraction)
     # augment_args['hsv_v']= 0.4 # image HSV-Value augmentation (fraction)
-    augment_args['degrees']= 0.1 # image rotation (+/- deg)
+    # augment_args['degrees']= 0.1 # image rotation (+/- deg)
     # augment_args['translate']= 0.1 # image translation (+/- fraction)
     # augment_args['scale']= 0 # image scale (+/- gain)
     # augment_args['shear']= 0.0 # image shear (+/- deg)
