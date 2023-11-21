@@ -11,7 +11,7 @@ if __name__ == '__main__':
     # dataset_path = '/home/wakanda/Documents/samin/yolov8/data/potato.yaml'
     train_args = dict(epochs=500, batch=4, imgsz=640, project="potato", name="potato-", augment=True, visualize=True, device=0, optimizer="auto")
     train_args['data'] = dataset_path
-    train_args['classes'] = [0, 23]
+    train_args['classes'] = [0]
     train_args['fraction'] = 1.0
     train_args['patience'] = 30
     train_args['pretrained'] = True
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     # augment_args['degrees']= 0.1 # image rotation (+/- deg)
     # augment_args['translate']= 0.1 # image translation (+/- fraction)
     # augment_args['scale']= 0 # image scale (+/- gain)
-    # augment_args['shear']= 0.0 # image shear (+/- deg)
+    augment_args['shear']= 0.1 # image shear (+/- deg)
     # augment_args['perspective']= 0.0 # image perspective (+/- fraction), range 0-0.001
     augment_args['flipud']= 0.5 # image flip up-down (probability)
     # augment_args['fliplr']= 0.5 # image flip left-right (probability)
