@@ -48,8 +48,8 @@ if __name__ == '__main__':
     augment_args['copy_paste']= 0.1 # segment copy-paste (probability)
 
     # Load a pretrained YOLO model (recommended for training)
-    # model = YOLO('yolov8n.pt')
-    model = YOLO('yolov8s.yaml').load('yolov8s.pt')
+    model = YOLO('yolov8s.pt')
+    # model = YOLO('yolov8s.yaml').load('yolov8s.pt')
 
     # Train the model using the 'coco128.yaml' dataset for 3 epochs
     # results = model.tune(**train_args, **augment_args, use_ray=True, gpu_per_trial=1)
